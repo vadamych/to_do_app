@@ -10,9 +10,6 @@ export const commonSlice = createSlice({
   name: 'common',
   initialState,
   reducers: {
-    setSearch: (state, action) => {
-      state.search = action.payload;
-    },
     addTodo: (state, action) => {
       state.todos = [...state.todos, action.payload];
     },
@@ -39,5 +36,5 @@ export const commonSlice = createSlice({
   },
 });
 
-export const { setTodos, setFilter, setSearch, addTodo, deleteTodo, toggleTodoCompleted, toggleTodoCurrent } = commonSlice.actions;
+export const { addTodo, deleteTodo, toggleTodoCompleted, toggleTodoCurrent } = commonSlice.actions;
 export default commonSlice.reducer;
