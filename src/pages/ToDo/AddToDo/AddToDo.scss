@@ -1,0 +1,13 @@
+.AddToDo {
+    .input-wrapper {
+        position: relative;
+
+        .add-btn {
+            position: absolute;
+            right: 10px;
+            top: 6px;
+            margin: 0;
+            height: 36px;
+        }
+    }
+}
