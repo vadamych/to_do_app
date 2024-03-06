@@ -26,6 +26,13 @@ const AddToDo = () => {
     setTodo('')
   }
 
+  const onPressEnter = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault()
+      handleAddTodo()
+    }
+  }
+
   return (
     <div className="AddToDo">
       <div className="input-wrapper">
@@ -34,6 +41,7 @@ const AddToDo = () => {
           type="text"
           value={todo}
           onChange={(event) => setTodo(event.target.value)}
+          onKeyDown={onPressEnter}
         />
         <Button className="add-btn" onClick={handleAddTodo}>
           Add
