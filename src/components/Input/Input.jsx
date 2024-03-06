@@ -1,7 +1,7 @@
-import './Input.scss';
+import './Input.scss'
 
 const Input = ({ ...props }) => {
-  return <input {...props} className={`input ${props.className}`} />;
-};
+  return <input {...props} className={`input ${props.className}`} />
+}
 
-export default Input;
+export default Input

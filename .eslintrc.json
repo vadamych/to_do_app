@@ -1,3 +1,14 @@
 {
-  "extends": ["react-app"]
+  "extends": ["react-app", "@wemake-services/javascript"],
+  "rules": {
+    "unicorn/filename-case": [
+	"error",
+	{
+		"cases": {
+			"camelCase": true,
+			"pascalCase": true
+		}
+	}
+]
+  }
 }

@@ -1,40 +1,40 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  todos: [],
-  filter: 'all',
-  search: '',
-};
+  'todos': [],
+  'filter': 'all',
+  'search': '',
+}
 
 export const commonSlice = createSlice({
-  name: 'common',
+  'name': 'common',
   initialState,
-  reducers: {
-    addTodo: (state, action) => {
-      state.todos = [...state.todos, action.payload];
+  'reducers': {
+    'addTodo': (state, action) => {
+      state.todos = [...state.todos, action.payload]
     },
-    deleteTodo: (state, action) => {
-      state.todos = state.todos.filter((todo) => todo.id !== action.payload.id);
+    'deleteTodo': (state, action) => {
+      state.todos = state.todos.filter((todo) => todo.id !== action.payload.id)
     },
-    toggleTodoCompleted: (state, action) => {
+    'toggleTodoCompleted': (state, action) => {
       state.todos = state.todos.map((todo) => {
         if (todo.id === action.payload.id) {
-          return { ...todo, completed: !todo.completed };
+          return { ...todo, 'completed': !todo.completed }
         }
-        return todo;
-      });
+        return todo
+      })
     },
-    toggleTodoCurrent: (state, action) => {
+    'toggleTodoCurrent': (state, action) => {
       state.todos = state.todos.map((todo) => {
         if (todo.id === action.payload.id) {
-          return { ...todo, current: !todo.current };
-        } else {
-          return { ...todo, current: false };
+          return { ...todo, 'current': !todo.current }
         }
-      });
+        return { ...todo, 'current': false }
+      })
     },
   },
-});
+})
 
-export const { addTodo, deleteTodo, toggleTodoCompleted, toggleTodoCurrent } = commonSlice.actions;
-export default commonSlice.reducer;
+export const { addTodo, deleteTodo, toggleTodoCompleted, toggleTodoCurrent } =
+  commonSlice.actions
+export default commonSlice.reducer
